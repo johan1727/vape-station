@@ -1,0 +1,672 @@
+/* General styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    max-width: 150px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #e63946;
+}
+
+/* Banner */
+.banner {
+    background-image: url('tu-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.banner h1 {
+    font-size: 3em;
+    animation: fadeInDown 1s ease-out;
+}
+
+.cta-button {
+    background-color: #e63946;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d62828;
+}
+
+/* Section destacado */
+.destacado {
+    background-attachment: fixed;
+    background-image: url('tu-fondo-destacado.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Testimonios */
+.testimonios {
+    background-color: #2c2c2c;
+    padding: 70px 20px;
+}
+
+.testimonios-grid {
+    display: flex;
+    justify-content: space-around;
+}
+
+.testimonio {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.testimonio h4 {
+    margin-top: 10px;
+    color: #e63946;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #e63946;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    margin-top: 50px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.modal-content button {
+    background-color: #e63946;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #d62828;
+}
+
+/* Botón para regresar al inicio */
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Animaciones de entrada */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Estilos para el carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-image {
+    width: 100%;
+    display: block;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel-button-left {
+    left: 10px;
+}
+
+.carousel-button-right {
+    right: 10px;
+}
+/* Imagen de fondo para el banner principal */
+.banner {
+    background-image: url('tu_imagen_de_fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+/* Imagen de fondo para la sección de testimonios */
+.testimonios {
+    background-image: url('tu_imagen_de_fondo_testimonios.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    color: white;
+}
+.banner {
+    background-image: url('nombre-de-tu-imagen.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner {
+    background-image: url('waka10000.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.producto img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.producto {
+    text-align: center;
+    margin: 20px;
+}
+.banner h1 {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.banner p {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideInFromRight 1.2s forwards;
+}
+
+@keyframes slideInFromRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.cta-button {
+    margin-top: 20px;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: buttonPop 1.5s forwards;
+}
+
+@keyframes buttonPop {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.banner h1 {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 2s forwards; /* Cambia la duración a 2s */
+}
+
+.banner p {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideInFromRight 2.5s forwards; /* Cambia la duración a 2.5s */
+}
+
+.cta-button {
+    display: block;
+    margin: 30px auto 0; /* Centra el botón */
+    opacity: 0;
+    transform: scale(0.5);
+    animation: buttonPop 3s forwards; /* Cambia la duración a 3s */
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttonPop {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+header, footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+.banner {
+    text-align: center;
+    padding: 100px 0;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #e63946;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #d62828;
+}
+.banner {
+    background-image: url('tu_imagen_de_fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+.section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.section.visible {
+    opacity: 1;
+}
+.banner {
+    background-image: url('vapefondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 100px 0;
+    color: #fff;
+}
+.decoracion {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px; /* Ajusta el tamaño según lo que necesites */
+    height: auto;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: slideInLeft 2s ease-in-out forwards;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: slideInLeft 2s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.cta-button {
+    background-color: #e63946;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    animation: fadeInUp 2s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+body {
+    background-image: url('vapefondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1d1d1f;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    height: 40px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.banner {
+    text-align: center;
+    padding: 100px 20px;
+    background-image: url('vapefondo.jpg'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #e63946;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #d62828;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+}
+
+.product {
+    text-align: center;
+}
+
+.product img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #1d1d1f;
+    color: #e0e0e0;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-section {
+    max-width: 300px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.875rem;
+    color: #a1a1a6;
+}
